@@ -8,6 +8,6 @@ require_once '../vendor/autoload.php';
 require_once 'helpers.php';
 
 $space = new \SpaceMvc\Framework\Space();
-$response = $space->getRequest()->get('b');
+$response = $space->getRouter()->getRoute();
 
 dump($response, 1);

@@ -7,5 +7,6 @@ $config = [
 return [
     'configs' => $config['base'].'/config',
     'logs' => $config['base'].'/storage/logs',
-    'models' => $config['base'].'app/Model'
+    'models' => $config['base'].'/app/Model',
+    'routes' => $config['base'].'/routes',
 ];

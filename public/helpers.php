@@ -5,6 +5,7 @@ use \SpaceMvc\Framework\Database;
 use \SpaceMvc\Framework\Env;
 use \SpaceMvc\Framework\Path;
 use \SpaceMvc\Framework\Request;
+use \SpaceMvc\Framework\Router;
 
 /**
  * pathBase
@@ -83,6 +84,15 @@ function request() : Request
 }
 
 /**
+ * router
+ * @return Router
+ */
+function router() : Router
+{
+    return new Router;
+}
+
+/**
  * dump
  * @param array $data
  * @param false $exit
@@ -97,4 +107,3 @@ function dump($data = [], $exit = false)
         exit;
     }
 }
-
