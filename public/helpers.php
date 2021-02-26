@@ -1,8 +1,10 @@
 <?php
 
 use \SpaceMvc\Framework\Config;
+use \SpaceMvc\Framework\Database;
 use \SpaceMvc\Framework\Env;
 use \SpaceMvc\Framework\Path;
+use \SpaceMvc\Framework\Request;
 
 /**
  * pathBase
@@ -27,6 +29,15 @@ function config($filename = '')
     }
 
     return $config;
+}
+
+/**
+ * db
+ * @return Database
+ */
+function db() : Database
+{
+    return new Database;
 }
 
 /**
@@ -60,6 +71,15 @@ function path($key = '')
     }
 
     return new Path();
+}
+
+/**
+ * request
+ * @return Request
+ */
+function request() : Request
+{
+    return new Request;
 }
 
 /**
