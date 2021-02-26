@@ -21,7 +21,7 @@ function pathBase() : string
  * @param string $filename
  * @return Config|array
  */
-function config($filename = '')
+function config($filename = null)
 {
     $config = new Config;
 
