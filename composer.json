@@ -1,11 +1,11 @@
 {
   "require": {
-    "space-mvc/space-mvc-library":"dev-main"
+    "space-mvc/space-mvc-framework":"dev-main"
   },
   "repositories": [
     {
        "type": "vcs",
-       "url": "https://github.com/space-mvc/space-mvc-library"
+       "url": "https://github.com/space-mvc/space-mvc-framework"
     }
   ]
 }
