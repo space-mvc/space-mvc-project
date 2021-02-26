@@ -8,7 +8,6 @@ require_once '../vendor/autoload.php';
 require_once 'helpers.php';
 
 $space = new \SpaceMvc\Framework\Space();
-$space->getCache()->set('hello', 'world');
-$response = $space->getCache()->get('hello');
+$space->getException()->throwJson('test', 400);
 
-dump($response, 1);
+//dump($response, 1);

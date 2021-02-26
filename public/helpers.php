@@ -3,9 +3,11 @@
 use \SpaceMvc\Framework\Config;
 use \SpaceMvc\Framework\Database;
 use \SpaceMvc\Framework\Env;
+use \SpaceMvc\Framework\Exception;
 use \SpaceMvc\Framework\Path;
 use \SpaceMvc\Framework\Request;
 use \SpaceMvc\Framework\Router;
+use \SpaceMvc\Framework\Session;
 
 /**
  * pathBase
@@ -59,6 +61,15 @@ function env($key = null, $default = null)
 }
 
 /**
+ * exception
+ * @return Exception
+ */
+function exception() : Exception
+{
+    return new Exception();
+}
+
+/**
  * path
  * @param string $key
  * @return Path|string
@@ -89,7 +100,28 @@ function request() : Request
  */
 function router() : Router
 {
-    return new Router;
+    return new Router(new Request());
+}
+
+/**
+ * session
+ * @param string $key
+ * @param mixed $value
+ * @return Session
+ */
+function session($key = null, $value = null)
+{
+    $session = new Session;
+
+    if(!empty($value)) {
+        $session->set($key, $value);
+    }
+
+    if(!empty($key)) {
+        return $session->get($key);
+    }
+
+    return new Session;
 }
 
 /**
