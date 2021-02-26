@@ -1,0 +1,11 @@
+{
+  "require": {
+    "space-mvc/space-mvc-library":"dev-main"
+  },
+  "repositories": [
+    {
+       "type": "vcs",
+       "url": "https://github.com/space-mvc/space-mvc-library"
+    }
+  ]
+}
