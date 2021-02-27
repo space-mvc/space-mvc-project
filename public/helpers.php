@@ -1,5 +1,6 @@
 <?php
 
+use \SpaceMvc\Framework\Cache;
 use \SpaceMvc\Framework\Config;
 use \SpaceMvc\Framework\Database;
 use \SpaceMvc\Framework\Env;
@@ -19,6 +20,26 @@ use \SpaceMvc\Framework\View;
 function pathBase() : string
 {
     return realpath(__DIR__.'/../');
+}
+
+/**
+ * cache
+ * @param string|null $key
+ * @param mixed $value
+ */
+function cache(string $key = null, $value = null)
+{
+    $cache = new Cache();
+
+    if(!empty($value)) {
+        $cache->set($key, $value);
+    }
+
+    if(!empty($key)) {
+        return $cache->get($key);
+    }
+
+    return $cache;
 }
 
 /**
