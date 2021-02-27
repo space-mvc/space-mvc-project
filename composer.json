@@ -7,5 +7,10 @@
        "type": "vcs",
        "url": "https://github.com/space-mvc/space-mvc-framework"
     }
-  ]
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app"
+    }
+  }
 }

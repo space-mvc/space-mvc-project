@@ -4,10 +4,13 @@ use \SpaceMvc\Framework\Config;
 use \SpaceMvc\Framework\Database;
 use \SpaceMvc\Framework\Env;
 use \SpaceMvc\Framework\Exception;
+use \SpaceMvc\Framework\Layout;
+use \SpaceMvc\Framework\Mail;
 use \SpaceMvc\Framework\Path;
 use \SpaceMvc\Framework\Request;
 use \SpaceMvc\Framework\Router;
 use \SpaceMvc\Framework\Session;
+use \SpaceMvc\Framework\View;
 
 /**
  * pathBase
@@ -25,7 +28,7 @@ function pathBase() : string
  */
 function config($filename = null)
 {
-    $config = new Config;
+    $config = new Config();
 
     if(!empty($filename)) {
         return $config->getFile($filename);
@@ -40,7 +43,7 @@ function config($filename = null)
  */
 function db() : Database
 {
-    return new Database;
+    return new Database();
 }
 
 /**
@@ -62,11 +65,41 @@ function env($key = null, $default = null)
 
 /**
  * exception
- * @return Exception
+ * @param null $message
+ * @param null $code
+ * @param string $type
+ * @throws \Exception
  */
-function exception() : Exception
+function exception($message = null, $code = null, $type = 'html') : void
 {
-    return new Exception();
+    $exception = new Exception();
+
+    if($type == 'html') {
+        $exception->throw($message, $code);
+    } else {
+        $exception->throwJson($message, $code);
+    }
+}
+
+/**
+ * layout
+ * @param string $layoutName
+ * @param View $view
+ * @param array $params
+ * @return Layout
+ */
+function layout(string $layoutName, View $view, array $params = []) : Layout
+{
+    return new Layout($layoutName, $view, $params);
+}
+
+/**
+ * mailer
+ * @return Mail
+ */
+function mailer() : Mail
+{
+    return new Mail();
 }
 
 /**
@@ -91,7 +124,7 @@ function path($key = '')
  */
 function request() : Request
 {
-    return new Request;
+    return new Request();
 }
 
 /**
@@ -111,7 +144,7 @@ function router() : Router
  */
 function session($key = null, $value = null)
 {
-    $session = new Session;
+    $session = new Session();
 
     if(!empty($value)) {
         $session->set($key, $value);
@@ -121,7 +154,7 @@ function session($key = null, $value = null)
         return $session->get($key);
     }
 
-    return new Session;
+    return new Session();
 }
 
 /**

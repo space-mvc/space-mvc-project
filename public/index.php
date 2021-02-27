@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 require_once '../vendor/autoload.php';
 require_once 'helpers.php';
 
-$space = new \SpaceMvc\Framework\Space();
-$space->getException()->throwJson('test', 400);
+$space = new \SpaceMvc\Framework\Space(false);
+$response = $space->getLayout();
 
-//dump($response, 1);
+dump($response, 1);
