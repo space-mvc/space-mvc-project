@@ -4,6 +4,7 @@
 - git clone https://github.com/space-mvc/space-mvc.git
 - cp .env.example .env
 - composer install
+- chmod 755 -R storage/logs
 
 ## Redis Cache - Install Instructions
 - sudo apt update
