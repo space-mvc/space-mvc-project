@@ -1,10 +1,9 @@
 # space-mvc-project
 
-## PHP 8 - Install instructions
-
-- sudo apt update
-- sudo apt install redis-server -y
-  
-
+## PHP 8 Space MVC - Install instructions
 - git clone https://github.com/space-mvc/space-mvc-project.git
 - composer install
+
+## Redis Cache - Install Instructions
+- sudo apt update
+- sudo apt install redis-server -y

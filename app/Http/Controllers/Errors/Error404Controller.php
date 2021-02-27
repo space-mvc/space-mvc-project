@@ -13,9 +13,10 @@ class Error404Controller extends BaseController
     /**
      * index
      */
-    public function index()
+    public function index() : void
     {
-        echo __CLASS__.':'.__METHOD__;
+        echo '<span style="font-family:arial;">error 404 - page not found</span>';
+        exit;
     }
 
 }

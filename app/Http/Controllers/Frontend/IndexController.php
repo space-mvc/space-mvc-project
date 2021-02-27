@@ -15,7 +15,7 @@ class IndexController extends BaseController
      */
     public function index()
     {
-        echo __CLASS__.':'.__METHOD__;
+        return view('frontend.index', ['key1' => 'value1']);
     }
 
 }

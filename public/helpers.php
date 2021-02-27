@@ -158,6 +158,18 @@ function session($key = null, $value = null)
 }
 
 /**
+ * view
+ * @param string $viewName
+ * @param array $params
+ * @return View
+ * @throws \Exception
+ */
+function view(string $viewName, array $params = []) : View
+{
+    return new View($viewName, $params);
+}
+
+/**
  * dump
  * @param array $data
  * @param false $exit
