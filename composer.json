@@ -1,16 +1,56 @@
 {
-  "require": {
-    "space-mvc/space-mvc-framework":"dev-main"
-  },
-  "repositories": [
-    {
-       "type": "vcs",
-       "url": "https://github.com/space-mvc/space-mvc-framework"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "App\\": "app"
-    }
-  }
+    "name": "space-mvc/space-mvc",
+    "type": "project",
+    "description": "This is the space mvc framework",
+    "keywords": [
+        "Space Mvc",
+        "Framework"
+    ],
+    "version" : "0.0.1",
+    "homepage": "https://github.com/space-mvc/space-mvc",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Space MVC",
+            "email": "space-mvc@gmail.com",
+            "homepage": "http://space-mvc.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "~8.0",
+        "space-mvc/space-mvc-framework":"dev-main"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : ">=8.0"
+    },
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/space-mvc/space-mvc-framework"
+      }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
