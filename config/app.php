@@ -9,6 +9,7 @@ return [
         'redis' => [
             'hostname' => env('REDIS_HOSTNAME', '127.0.0.1'),
             'port' => env('REDIS_PORT', 6379),
+            'database' => env('REDIS_DATABASE', 1)
         ]
     ],
     'databases' => [
