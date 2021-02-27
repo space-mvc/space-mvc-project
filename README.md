@@ -11,5 +11,5 @@
 
 ### Notes
 - This project requires the following plugin below installed to work correctly
-- This will automatically be installed when you run the composer install command
+- This plugin will automatically be installed when you run the composer install command
 - https://github.com/space-mvc/space-mvc-framework.git
