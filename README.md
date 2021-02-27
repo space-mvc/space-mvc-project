@@ -9,7 +9,7 @@
 - sudo apt update
 - sudo apt install redis-server -y
 
-### Notes
+## Notes
 - This project requires the following plugin below installed to work correctly
 - This plugin will automatically be installed when you run the composer install command
 - https://github.com/space-mvc/space-mvc-framework.git
