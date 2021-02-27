@@ -8,7 +8,7 @@ return [
     'cache' => [
         'redis' => [
             'hostname' => env('REDIS_HOSTNAME', '127.0.0.1'),
-            'port' => env('REDIS_PORT', 11211),
+            'port' => env('REDIS_PORT', 6379),
         ]
     ],
     'databases' => [
