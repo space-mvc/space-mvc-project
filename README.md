@@ -8,3 +8,8 @@
 ## Redis Cache - Install Instructions
 - sudo apt update
 - sudo apt install redis-server -y
+
+### Notes
+- This project requires the following plugin below installed to work correctly
+- This will automatically be installed when you run the composer install command
+- https://github.com/space-mvc/space-mvc-framework.git
