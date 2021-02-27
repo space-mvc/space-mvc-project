@@ -1,7 +1,7 @@
 # space-mvc-project
 
 ## PHP 8 Space MVC - Install instructions
-- git clone https://github.com/space-mvc/space-mvc-project.git
+- git clone https://github.com/space-mvc/space-mvc.git
 - composer install
 
 ## Redis Cache - Install Instructions
