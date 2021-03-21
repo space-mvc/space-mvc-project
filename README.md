@@ -25,3 +25,47 @@
 - This project requires the following plugin below installed to work correctly
 - This plugin will automatically be installed when you run the composer install command
 - https://github.com/space-mvc/space-mvc-framework.git
+
+## How to use the Assets Class
+
+### Add HTML Asset
+```php
+$this->app->getAsset()->add('css', '/example.com/assets/css/sample.css');
+$this->app->getAsset()->add('js', '/example.com/assets/js/sample.js');
+$this->app->getAsset()->add('less', '/example.com/assets/less/sample.less');
+```
+
+### List HTML Assets
+```php
+$assets = $this->app->getAsset()->get();
+```
+
+```json
+{
+  "css" : [
+    {
+      "url":"/example.com/assets/css/sample.css",
+      "attributes":[]
+    }
+  ],
+  "js" : [
+    {
+      "url":"/example.com/assets/js/sample.js",
+      "attributes":[]
+    }
+  ],
+  "less" : [
+    {
+      "url":"/example.com/assets/less/sample.less",
+      "attributes":[]
+    }
+  ]
+}
+```
+
+
+### Render HTML Assets
+```php
+echo $this->app->getAsset()->render()
+```
+

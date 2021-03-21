@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\BaseController;
+use App\Model\User;
 
 /**
  * Class IndexController
@@ -15,7 +16,10 @@ class IndexController extends BaseController
      */
     public function index()
     {
-        return view('frontend.index', ['key1' => 'value1']);
+        $results = User::select()->get();
+        dump($results, 1);
+
+        //return view('frontend.index', ['key1' => 'value1']);
     }
 
 }
