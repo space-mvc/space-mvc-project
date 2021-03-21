@@ -69,9 +69,9 @@ $assets = $this->app->getAsset()->get();
 echo $this->app->getAsset()->render();
 ```
 
-## How to use the Cache Class
+#### How to use the Cache Class
 
-### Write to cache
+#### Write to cache
 ```php
 $data = [
   'key 1' => 'value 1',
@@ -82,17 +82,24 @@ $data = [
 $this->app->getCache()->set('custom-key', $data);
 ```
 
-### Get data from cache
+#### Get data from cache
 ```php
 $result = $this->app->getCache()->get('custom-key');
 ```
 
-### Delete data from cache
+#### Delete data from cache
 ```php
 $result = $this->app->getCache()->delete('custom-key');
 ```
 
-### Flush the whole cache
+#### Flush the whole cache
 ```php
 $result = $this->app->getCache()->flushDb();
+```
+
+### How to use the Config Class
+#### Get config files
+```php
+$configApp   = $this->app->getConfig()->get('app');
+$configPaths = $this->app->getConfig()->get('paths');
 ```
