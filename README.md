@@ -120,3 +120,10 @@ $this->app->getException()->throw("page not found", 404);
 ```php
 $this->app->getException()->throwJson("page not found", 404);
 ```
+
+## How to use the Log Class
+
+#### Display html exception message
+```php
+$this->app->getLog()->write("custom error message", 'app.log');
+```
