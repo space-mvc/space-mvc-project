@@ -113,10 +113,10 @@ $envDbHostname = $this->app->getEnv()->get('DB_HOSTNAME', '127.0.0.1');
 
 #### Display html exception message
 ```php
-$this->app->getEnv()->throw("page not found", 404);
+$this->app->getException()->throw("page not found", 404);
 ```
 
 #### Display json exception message
 ```php
-$this->app->getEnv()->throwJson("page not found", 404);
+$this->app->getException()->throwJson("page not found", 404);
 ```
