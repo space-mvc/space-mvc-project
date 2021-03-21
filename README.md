@@ -26,16 +26,16 @@
 - This plugin will automatically be installed when you run the composer install command
 - https://github.com/space-mvc/space-mvc-framework.git
 
-## How to use the Assets Class
+### How to use the Assets Class
 
-### Add HTML Asset
+#### Add HTML Asset
 ```php
 $this->app->getAsset()->add('css', '/example.com/assets/css/sample.css');
 $this->app->getAsset()->add('js', '/example.com/assets/js/sample.js');
 $this->app->getAsset()->add('less', '/example.com/assets/less/sample.less');
 ```
 
-### List HTML Assets
+#### List HTML Assets
 ```php
 $assets = $this->app->getAsset()->get();
 ```
@@ -62,14 +62,12 @@ $assets = $this->app->getAsset()->get();
   ]
 }
 ```
-
-
-### Render HTML Assets
+#### Render HTML Assets
 ```php
 echo $this->app->getAsset()->render();
 ```
 
-#### How to use the Cache Class
+### How to use the Cache Class
 
 #### Write to cache
 ```php
@@ -98,8 +96,28 @@ $result = $this->app->getCache()->flushDb();
 ```
 
 ### How to use the Config Class
+
 #### Get config files
 ```php
 $configApp   = $this->app->getConfig()->get('app');
 $configPaths = $this->app->getConfig()->get('paths');
+```
+
+### How to use the Env Class
+
+#### Get env properties
+```php
+$envDbHostname   = $this->app->getEnv()->get('DB_HOSTNAME', '127.0.0.1');
+```
+
+### How to use the Exception Class
+
+#### display html exception message
+```php
+$this->app->getEnv()->throw("page not found", 404);
+```
+
+#### display json exception message
+```php
+$this->app->getEnv()->throwJson("page not found", 404);
 ```
