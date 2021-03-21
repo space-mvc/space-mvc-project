@@ -66,7 +66,7 @@ $assets = $this->app->getAsset()->get();
 echo $this->app->getAsset()->render();
 ```
 
-### How to use the Cache Class
+## How to use the Cache Class
 
 #### Write to cache
 ```php
@@ -94,7 +94,7 @@ $result = $this->app->getCache()->delete('custom-key');
 $result = $this->app->getCache()->flushDb();
 ```
 
-### How to use the Config Class
+## How to use the Config Class
 
 #### Get config files
 ```php
@@ -102,14 +102,14 @@ $configApp   = $this->app->getConfig()->get('app');
 $configPaths = $this->app->getConfig()->get('paths');
 ```
 
-### How to use the Env Class
+## How to use the Env Class
 
 #### Get env properties
 ```php
 $envDbHostname = $this->app->getEnv()->get('DB_HOSTNAME', '127.0.0.1');
 ```
 
-### How to use the Exception Class
+## How to use the Exception Class
 
 #### Display html exception message
 ```php
