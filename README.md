@@ -107,7 +107,7 @@ $configPaths = $this->app->getConfig()->get('paths');
 
 #### Get env properties
 ```php
-$envDbHostname   = $this->app->getEnv()->get('DB_HOSTNAME', '127.0.0.1');
+$envDbHostname = $this->app->getEnv()->get('DB_HOSTNAME', '127.0.0.1');
 ```
 
 ### How to use the Exception Class
