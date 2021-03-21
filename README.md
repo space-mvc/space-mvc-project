@@ -26,8 +26,7 @@
 - This plugin will automatically be installed when you run the composer install command
 - https://github.com/space-mvc/space-mvc-framework.git
 
-### How to use the Assets Class
-
+## How to use the Assets Class
 #### Add HTML Asset
 ```php
 $this->app->getAsset()->add('css', '/example.com/assets/css/sample.css');
