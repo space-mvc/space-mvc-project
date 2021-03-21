@@ -112,12 +112,12 @@ $envDbHostname = $this->app->getEnv()->get('DB_HOSTNAME', '127.0.0.1');
 
 ### How to use the Exception Class
 
-#### display html exception message
+#### Display html exception message
 ```php
 $this->app->getEnv()->throw("page not found", 404);
 ```
 
-#### display json exception message
+#### Display json exception message
 ```php
 $this->app->getEnv()->throwJson("page not found", 404);
 ```
