@@ -56,7 +56,17 @@ $assets = $this->app->getAsset()->get();
 ```
 #### Render HTML Assets
 ```php
-echo $this->app->getAsset()->render();
+echo $this->app->getAsset()->render('css');
+```
+```html
+<link type="text/css" rel="stylesheet" src="/example.com/assets/css/sample.css">
+```
+
+```php
+echo $this->app->getAsset()->render('js');
+```
+```html
+<script type="text/javascript" src="/example.com/assets/js/sample.js">
 ```
 
 ## How to use the Cache Class
