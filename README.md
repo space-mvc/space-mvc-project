@@ -31,7 +31,6 @@
 ```php
 $this->app->getAsset()->add('css', '/example.com/assets/css/sample.css');
 $this->app->getAsset()->add('js', '/example.com/assets/js/sample.js');
-$this->app->getAsset()->add('less', '/example.com/assets/less/sample.less');
 ```
 
 #### List HTML Assets
