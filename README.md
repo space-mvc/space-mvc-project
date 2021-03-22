@@ -55,6 +55,7 @@ $assets = $this->app->getAsset()->get();
 }
 ```
 #### Render HTML Assets
+##### CSS
 ```php
 echo $this->app->getAsset()->render('css');
 ```
@@ -62,6 +63,7 @@ echo $this->app->getAsset()->render('css');
 <link type="text/css" rel="stylesheet" src="/example.com/assets/css/sample.css">
 ```
 
+##### Javascript
 ```php
 echo $this->app->getAsset()->render('js');
 ```
