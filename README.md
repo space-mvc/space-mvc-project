@@ -51,12 +51,6 @@ $assets = $this->app->getAsset()->get();
       "url":"/example.com/assets/js/sample.js",
       "attributes":[]
     }
-  ],
-  "less" : [
-    {
-      "url":"/example.com/assets/less/sample.less",
-      "attributes":[]
-    }
   ]
 }
 ```
