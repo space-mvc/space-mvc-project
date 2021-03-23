@@ -32,6 +32,8 @@
 | -------| ----------- |
 | [Asset](#how-to-use-the-assets-class) | This class can be used to store and retrieve HTML include attributes for css and javascript  |
 | [Cache](#how-to-use-the-cache-class)  | This class can be used to store and retrieve data to and from the cache  |
+| [Config](#how-to-use-the-config-class) | This class can be used to get the config files from the /configs folder into an data array|
+
 
 ## How to use the Assets Class
 #### Add HTML Asset

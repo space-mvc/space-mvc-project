@@ -50,7 +50,7 @@ function cache(string $key = null, $value = null)
 function config($filename = null)
 {
     $config = new Config();
-    $config->loadData($filename);
+    $config->setConfig($filename);
     return $config->get();
 }
 
