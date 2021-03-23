@@ -127,8 +127,8 @@ $result = $this->app->getCache()->flushDb();
 
 #### Get config files
 ```php
-$configApp   = $this->app->getConfig()->loadConfig('app')->get();
-$configPaths = $this->app->getConfig()->loadConfig('paths')->get();
+$configApp   = $this->app->getConfig()->setConfig('app')->get();
+$configPaths = $this->app->getConfig()->setConfig('paths')->get();
 ```
 
 ## How to use the Env Class
