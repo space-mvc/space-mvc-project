@@ -40,9 +40,10 @@ The ```$this->app``` variable is automatically included and accessible in all co
 | [Cache](#how-to-use-the-cache-class)  | This class can be used to store and retrieve data to and from the cache  |
 | [Config](#how-to-use-the-config-class) | This class can be used to get the config files from the /configs folder into an data array|
 | [Env](#how-to-use-the-env-class) | This class can be used to retrieve environment config data from the .env file |
+| [Log](#how-to-use-the-log-class)| This class can be used to write log entries to the log files |
 | [Path](#how-to-use-the-path-class) | This can be used to retrieve config data from /config/paths.php | 
 | [Session](#how-to-use-the-session-class) | This class can be use to set and get session data | 
-| [Log](#how-to-use-the-log-class)| This class can be used to write log entries to the log files |
+
 
 ## How to use the Assets Class
 #### Add HTML Asset
