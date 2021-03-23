@@ -41,7 +41,7 @@ The ```$this->app``` variable is automatically included and accessible in all co
 | [Config](#how-to-use-the-config-class) | This class can be used to get the config files from the /configs folder into an data array|
 | [Env](#how-to-use-the-env-class) | This class can be used to retrieve environment config data from the .env file |
 | [Session](#how-to-use-the-session-class) | This class can be use to set and get session data | 
-
+| [Path](#how-to-use-the-path-class) | This can be used to retrieve config data from /config/paths.php | 
 
 ## How to use the Assets Class
 #### Add HTML Asset
@@ -165,6 +165,30 @@ $this->app->getException()->throwJson("page not found", 404);
 $this->app->getLog()->write('custom error message', 'app.log');
 ```
 
+## How to use the Path class
+
+#### Get all paths from config
+```php
+$results = $this->app->getPath()->get()
+```
+```json
+[
+    "configs" : "/var/www/space-mvc/config",
+    "layouts" : "/var/www/space-mvc/resources/layouts",
+    "logs" : "/var/www/space-mvc/storage/logs",
+    "models" : "/var/www/space-mvc/app/Model",
+    "public" : "/var/www/space-mvc/public",
+    "routes" : "/var/www/space-mvc/routes",
+    "views" : "/var/www/space-mvc/resources/views"
+]
+```
+
+#### Get selected path from config
+```php
+$results = $this->app->getPath()->get()['public']
+```
+```/var/www/space-mvc/public```
+
 ## How to use the Session Class
 
 #### Write to session key
@@ -176,6 +200,3 @@ $this->app->getSession()->set('key1', 'value1');
 ```php
 $result = $this->app->getSession()->get('key1');
 ```
-
-
-
