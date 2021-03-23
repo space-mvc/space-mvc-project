@@ -172,8 +172,7 @@ $this->app->getLog()->write('custom error message', 'app.log');
 $results = $this->app->getPath()->get()
 ```
 ```php
-Array
-(
+[
     'configs' => '/var/www/space-mvc/config',
     'layouts' => '/var/www/space-mvc/resources/layouts',
     'logs'    => '/var/www/space-mvc/storage/logs',
@@ -181,7 +180,7 @@ Array
     'public'  => '/var/www/space-mvc/public',
     'routes'  => '/var/www/space-mvc/routes',
     'views'   => /var/www/space-mvc/resources/views'
-)
+]
 ```
 
 #### Get selected path from config
