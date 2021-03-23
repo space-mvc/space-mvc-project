@@ -31,7 +31,7 @@
 | Class  | Description |
 | -------| ----------- |
 | [Asset](#how-to-use-the-assets-class) | This class can be used to store and retrieve HTML include attributes for css and javascript  |
-| Cache  | This class can be used to store and retrieve data to and from the cache  |
+| [Cache](#how-to-use-the-cache-class)  | This class can be used to store and retrieve data to and from the cache  |
 
 ## How to use the Assets Class
 #### Add HTML Asset
