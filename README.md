@@ -171,16 +171,17 @@ $this->app->getLog()->write('custom error message', 'app.log');
 ```php
 $results = $this->app->getPath()->get()
 ```
-```json
-[
-    "configs" : "/var/www/space-mvc/config",
-    "layouts" : "/var/www/space-mvc/resources/layouts",
-    "logs" : "/var/www/space-mvc/storage/logs",
-    "models" : "/var/www/space-mvc/app/Model",
-    "public" : "/var/www/space-mvc/public",
-    "routes" : "/var/www/space-mvc/routes",
-    "views" : "/var/www/space-mvc/resources/views"
-]
+```php
+Array
+(
+    'configs' => '/var/www/space-mvc/config',
+    'layouts' => '/var/www/space-mvc/resources/layouts',
+    'logs'    => '/var/www/space-mvc/storage/logs',
+    'models'  => '/var/www/space-mvc/app/Model',
+    'public'  => '/var/www/space-mvc/public',
+    'routes'  => '/var/www/space-mvc/routes',
+    'views'   => /var/www/space-mvc/resources/views'
+)
 ```
 
 #### Get selected path from config
