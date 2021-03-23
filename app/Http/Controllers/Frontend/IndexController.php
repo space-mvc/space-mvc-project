@@ -13,7 +13,9 @@ class IndexController extends BaseController
 {
     public function index()
     {
+        $this->app->getCache()->set('custom-key', '123');
 
+        dump($this->app->getCache()->get('custom-key'), 1);
     }
 
 

@@ -29,8 +29,8 @@
 ## How to use the Assets Class
 #### Add HTML Asset
 ```php
-$this->app->getAsset()->add('css', '/example.com/assets/css/sample.css');
-$this->app->getAsset()->add('js', '/example.com/assets/js/sample.js');
+$this->app->getAsset()->add('css', '/assets/css/sample.css');
+$this->app->getAsset()->add('js', '/assets/js/sample.js');
 ```
 
 #### List HTML Assets
@@ -42,18 +42,33 @@ $assets = $this->app->getAsset()->get();
 {
   "css" : [
     {
-      "url":"/example.com/assets/css/sample.css",
+      "url":"/assets/css/sample.css",
       "attributes":[]
     }
   ],
   "js" : [
     {
-      "url":"/example.com/assets/js/sample.js",
+      "url":"/assets/js/sample.js",
       "attributes":[]
     }
   ]
 }
 ```
+
+#### List HTML Assets - Select Single Type
+```php
+$assets = $this->app->getAsset()->get('css');
+```
+
+```json
+[
+  {
+    "url":"/assets/css/sample.css",
+    "attributes":[]
+  }
+]
+```
+
 #### Render HTML Assets
 ##### CSS
 ```php

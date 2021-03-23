@@ -50,12 +50,8 @@ function cache(string $key = null, $value = null)
 function config($filename = null)
 {
     $config = new Config();
-
-    if(!empty($filename)) {
-        return $config->getFile($filename);
-    }
-
-    return $config;
+    $config->loadData($filename);
+    return $config->get();
 }
 
 /**
