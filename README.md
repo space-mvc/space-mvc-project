@@ -30,7 +30,7 @@
 
 | Class  | Description |
 | -------| ----------- |
-| [Asset](#How to use the Assets Class) | This class can be used to store and retrieve HTML include attributes for css and javascript  |
+| [Asset](##How to use the Assets Class) | This class can be used to store and retrieve HTML include attributes for css and javascript  |
 | Cache  | This class can be used to store and retrieve data to and from the cache  |
 
 ## How to use the Assets Class
