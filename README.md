@@ -28,7 +28,7 @@
 
 ## General Information
 
-The ```$this->app``` variable is automatically included into all controllers
+The ```$this->app``` variable contains access to all library classes below. This is automatically included and accessible in all controllers
 
 ## Available Library Classes
 
