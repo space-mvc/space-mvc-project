@@ -30,10 +30,10 @@
 
 | Class  | Description |
 | -------| ----------- |
-| [Asset](##How to use the Assets Class) | This class can be used to store and retrieve HTML include attributes for css and javascript  |
+| [Asset](#How to use the Assets Class) | This class can be used to store and retrieve HTML include attributes for css and javascript  |
 | Cache  | This class can be used to store and retrieve data to and from the cache  |
 
-##How to use the Assets Class
+#How to use the Assets Class
 #### Add HTML Asset
 ```php
 $this->app->getAsset()->add('css', '/assets/css/sample.css');
