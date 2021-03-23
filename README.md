@@ -40,6 +40,8 @@ The ```$this->app``` variable is automatically included and accessible in all co
 | [Cache](#how-to-use-the-cache-class)  | This class can be used to store and retrieve data to and from the cache  |
 | [Config](#how-to-use-the-config-class) | This class can be used to get the config files from the /configs folder into an data array|
 | [Env](#how-to-use-the-env-class) | This class can be used to retrieve environment config data from the .env file |
+| [Session](#how-to-use-the-session-class) | This class can be use to set and get session data | 
+
 
 ## How to use the Assets Class
 #### Add HTML Asset
@@ -160,5 +162,20 @@ $this->app->getException()->throwJson("page not found", 404);
 
 #### Write a message to a log file
 ```php
-$this->app->getLog()->write("custom error message", 'app.log');
+$this->app->getLog()->write('custom error message', 'app.log');
 ```
+
+## How to use the Session Class
+
+#### Write to session key
+```php
+$this->app->getSession()->set('key1', 'value1');
+```
+
+#### Retrieve a session key
+```php
+$result = $this->app->getSession()->get('key1');
+```
+
+
+
