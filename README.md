@@ -190,7 +190,9 @@ $results = $this->app->getPath()->get()
 ```php
 $results = $this->app->getPath()->get()['public']
 ```
-```/var/www/space-mvc/public```
+```php
+/var/www/space-mvc/public
+```
 
 ## How to use the Session Class
 
