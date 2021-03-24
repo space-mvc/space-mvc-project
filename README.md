@@ -158,7 +158,7 @@ $this->app->getException()->throw("There was a problem creating a new user", 501
 
 #### Display json exception message
 ```php
-$this->app->getException()->throwJson("There was a problem create a new user", 501);
+$this->app->getException()->throwJson("There was a problem creating a new user", 501);
 ```
 
 ## How to use the Log Class
