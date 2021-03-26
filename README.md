@@ -30,13 +30,61 @@
 
 | Class  | Description |
 | -------| ----------- |
-| [Routes](#how-to-use-the-exception-class) | The routes can be used to create uris that point to controller actions |
-| [Controllers](#how-to-use-the-assets-class) | This Controllers can be used to store the business logic of your application |
+| [Routes](#routes) | The routes can be used to create uris that point to controller actions |
+| [Controllers](#controllers) | This Controllers can be used to store the business logic of your application |
 | [Models](#how-to-use-the-cache-class)  | The Models can be used to select, insert, create, update and delete database data  |
 | [Views](#how-to-use-the-config-class) | This Views can be used to output html to the end user |
 | [Layouts](#how-to-use-the-env-class) | The Layouts can be used to be a parent layout to the view |
 
+## Routes 
+#### How to create a new Route
+
+1. Open the file /routes/web.php
+2. Add a new entry to the array
+```php
+[
+    'name' => 'frontend.users',
+    'uri' => '/users',
+    'controller' => \App\Http\Controllers\Frontend\UsersControllerController::class,
+    'action' => 'index',
+],
+```
+
+## Controllers
+
+#### How to create a new Controller
+1. Create a new file in the Controllers folder /app/Http/Controllers/Frontend
+2. For example UsersController.php
+3. Add the following template
+```php
+<?php
+
+namespace App\Http\Controllers\Frontend;
+
+use App\Http\Controllers\BaseController;
+use SpaceMvc\Framework\Mvc\View;
+
+/**
+ * Class UsersController
+ * @package App\Http\Controllers\Frontend
+ */
+class UsersController extends BaseController
+{
+    /**
+     * index
+     * @return View
+     */
+    public function index() : View
+    {
+        return $this->app->getView('frontend.users.index', []);
+    }
+}
+```
+4. Change where it says ```UsersController``` to your new Controller Name
+5. Change where it says ```frontend.users.index``` to your new view name for example ```frontend.examples.index```
 ## General Information
+
+
 
 The ```$this->app``` variable contains access to all library classes below. 
 
