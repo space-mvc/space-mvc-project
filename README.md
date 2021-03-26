@@ -2,7 +2,7 @@
 
 | Tutorial  | Description |
 | -------| ----------- |
-| 1. [Install&nbsp;Guide](#1-routes) | This is an install guide on how to install space mvc on to your linux, windows or mac computer or server |
+| [Install&nbsp;Guide](#1-routes) | This is an install guide on how to install space mvc on to your linux, windows or mac computer or server |
 
 ## Quick Start Guide
 
