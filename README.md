@@ -30,13 +30,13 @@
 
 | Class  | Description |
 | -------| ----------- |
-| [Routes](#routes) | The routes can be used to create uris that point to controller actions |
-| [Controllers](#controllers) | This Controllers can be used to store the business logic of your application |
-| [Models](#how-to-use-the-cache-class)  | The Models can be used to select, insert, create, update and delete database data  |
-| [Views](#how-to-use-the-config-class) | This Views can be used to output html to the end user |
-| [Layouts](#how-to-use-the-env-class) | The Layouts can be used to be a parent layout to the view |
+| 1. [Routes](#1-routes) | The routes can be used to create uris that point to controller actions |
+| 2. [Controllers](#2-controllers) | This Controllers can be used to store the business logic of your application |
+| 3. [Models](#how-to-use-the-cache-class)  | The Models can be used to select, insert, create, update and delete database data  |
+| 4. [Views](#how-to-use-the-config-class) | This Views can be used to output html to the end user |
+| 5. [Layouts](#how-to-use-the-env-class) | The Layouts can be used to be a parent layout to the view |
 
-## Routes 
+## 1 Routes 
 #### How to create a new Route
 
 1. Open the file /routes/web.php
@@ -50,7 +50,7 @@
 ],
 ```
 
-## Controllers
+## 2 Controllers
 
 #### How to create a new Controller
 1. Create a new file in the Controllers folder /app/Http/Controllers/Frontend
