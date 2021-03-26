@@ -39,7 +39,7 @@ The ```$this->app``` variable is automatically included and accessible in all co
 | [Asset](#how-to-use-the-assets-class) | This class can be used to store and retrieve HTML include attributes for css and javascript  |
 | [Cache](#how-to-use-the-cache-class)  | This class can be used to store and retrieve data to and from the cache  |
 | [Config](#how-to-use-the-config-class) | This class can be used to get the config files from the /configs folder into an data array|
-| [Env](#how-to-use-the-env-class) | This class can be used to retrieve environment config data from the .env file |
+| [Env](#how-to-use-the-env-class) | This class can be used to retrieve environment config data from the /.env file |
 | [Exception](#how-to-use-the-exception-class) | This class can be used to display exception messages to the user in html or json format |
 | [Log](#how-to-use-the-log-class)| This class can be used to write log entries to the log files (default: /storage/logs/app.log)|
 | [Path](#how-to-use-the-path-class) | This class can be used to retrieve config data from /config/paths.php | 
