@@ -44,6 +44,7 @@ The ```$this->app``` variable is automatically included and accessible in all co
 | [Log](#how-to-use-the-log-class)| This class can be used to write log entries to the log files (default: /storage/logs/app.log)|
 | [Path](#how-to-use-the-path-class) | This class can be used to retrieve config data from /config/paths.php | 
 | [Request](#how-to-use-the-request-class) | This class can be used to retrieve the current request uri, method, get and post data | 
+| [Router](#how-to-use-the-router-class) | This class can be used to get the current selected route, and a list of all available routes | 
 | [Session](#how-to-use-the-session-class) | This class can be use to set and get session data | 
 
 
@@ -238,6 +239,51 @@ $post = $this->app->getRequest()->post();
   'field_1' => 'value_1',
   'field_2' => 'value_2',
   'field_3' => 'value_3',
+]
+```
+## How to use the Router Class
+
+#### Get the full list of available routes
+
+```php
+$routes = $this->app->getRoute()->getRoutes();
+```
+
+```php
+[
+    [
+        'name' => 'frontend.home',
+        'uri' => '/',
+        'controller' => \App\Http\Controllers\Frontend\IndexController::class,
+        'action' => 'index',
+    ],
+    [
+        'name' => 'frontend.examples.assets',
+        'uri' => '/examples/assets',
+        'controller' => \App\Http\Controllers\Frontend\ExamplesController::class,
+        'action' => 'assets',
+    ],
+    [
+        'name' => 'frontend.examples.cache',
+        'uri' => '/examples/cache',
+        'controller' => \App\Http\Controllers\Frontend\ExamplesController::class,
+        'action' => 'cache',
+    ],
+]
+```
+
+#### retrieve the current selected route
+
+```php
+$route = $this->app->getRoute()->getRoute();
+```
+
+```php
+[
+    'name' => 'frontend.home',
+    'uri' => '/',
+    'controller' => \App\Http\Controllers\Frontend\IndexController::class,
+    'action' => 'index',
 ]
 ```
 
