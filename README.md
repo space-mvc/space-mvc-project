@@ -82,6 +82,44 @@ class UsersController extends BaseController
 ```
 4. Change where it says ```UsersController``` to your new Controller Name
 5. Change where it says ```frontend.users.index``` to your new view name for example ```frontend.examples.index```
+
+## 3. Models
+
+#### How to create a new Model file
+1. Create a new file inside /app/Model
+2. For example User.php
+3. Copy the following template into the file
+```php
+<?php
+
+namespace App\Model;
+
+use SpaceMvc\Framework\Mvc\Model;
+
+/**
+ * Class User
+ * @package App\Model
+ */
+class User extends Model
+{
+    /** @var string $table */
+    protected static string $table = 'users';
+
+    /** @var array $fillable  */
+    protected static array $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'created_at',
+        'updated_at'
+    ];
+}
+```
+4. Update where it says ```class User``` to your new Model name
+5. Update where it says ```$table = 'users';'``` to your new database table name
+6. Update where it says ```$fillable = []``` to your correct database table field names for your selected table
+
 ## General Information
 
 

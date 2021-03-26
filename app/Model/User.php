@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-use SpaceMvc\Framework\Model;
+use SpaceMvc\Framework\Mvc\Model;
 
 /**
  * Class User
