@@ -44,7 +44,7 @@ The ```$this->app``` variable is automatically included and accessible in all co
 | [Log](#how-to-use-the-log-class)| This class can be used to write log entries to the log files (default: /storage/logs/app.log)|
 | [Path](#how-to-use-the-path-class) | This class can be used to retrieve config data from /config/paths.php | 
 | [Request](#how-to-use-the-request-class) | This class can be used to retrieve the current request uri, method, get and post data | 
-| [Router](#how-to-use-the-router-class) | This class can be used to get the current selected route, and a list of all available routes | 
+| [Router](#how-to-use-the-router-class) | This class can be used to get the current selected route or a list of all available routes | 
 | [Session](#how-to-use-the-session-class) | This class can be use to set and get session data | 
 
 
