@@ -26,6 +26,16 @@
 - This plugin will automatically be installed when you run the composer install command
 - https://github.com/space-mvc/space-mvc-framework.git
 
+## Quick Start Guide
+
+| Class  | Description |
+| -------| ----------- |
+| [Routes](#how-to-use-the-exception-class) | The routes can be used to create uris that point to controller actions |
+| [Controllers](#how-to-use-the-assets-class) | This Controllers can be used to store the business logic of your application |
+| [Models](#how-to-use-the-cache-class)  | The Models can be used to select, insert, create, update and delete database data  |
+| [Views](#how-to-use-the-config-class) | This Views can be used to output html to the end user |
+| [Layouts](#how-to-use-the-env-class) | The Layouts can be used to be a parent layout to the view |
+
 ## General Information
 
 The ```$this->app``` variable contains access to all library classes below. 
