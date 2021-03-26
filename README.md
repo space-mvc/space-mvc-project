@@ -41,7 +41,7 @@ The ```$this->app``` variable is automatically included and accessible in all co
 | [Config](#how-to-use-the-config-class) | This class can be used to get the config files from the /configs folder into an data array|
 | [Env](#how-to-use-the-env-class) | This class can be used to retrieve environment config data from the .env file |
 | [Exception](#how-to-use-the-exception-class) | This class can be used to display exception messages to the user in html or json format |
-| [Log](#how-to-use-the-log-class)| This class can be used to write log entries to the log files |
+| [Log](#how-to-use-the-log-class)| This class can be used to write log entries to the log files (default: /storage/logs/app.log)|
 | [Path](#how-to-use-the-path-class) | This class can be used to retrieve config data from /config/paths.php | 
 | [Request](#how-to-use-the-request-class) | This class can be used to retrieve the current request uri, method, get and post data | 
 | [Session](#how-to-use-the-session-class) | This class can be use to set and get session data | 
