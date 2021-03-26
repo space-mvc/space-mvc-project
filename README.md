@@ -171,7 +171,7 @@ class UsersController extends BaseController
 4. For example ```/resources/layouts/backend.php```
 5. Copy in the following template to use as a starting point
 ```php
-This is the frontend layout<br />
+This is the backend layout<br />
 
 <?php echo !empty($content) ? $content : null; ?>
 ```
