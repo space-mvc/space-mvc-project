@@ -9,7 +9,7 @@
 | Class  | Description |
 | -------| ----------- |
 | 1. [Routes](#1-routes) | The routes can be used to create uris that point to controller actions |
-| 2. [Controllers](#2-controllers) | This Controllers can be used to store the model data and view response outputs of your application |
+| 2. [Controllers](#2-controllers) | This Controllers can be used to store the model data and view response output |
 | 3. [Models](#how-to-use-the-cache-class)  | The Models can be used to select, insert, create, update and delete database data  |
 | 4. [Views](#how-to-use-the-config-class) | This Views can be used to output html to the end user |
 | 5. [Layouts](#how-to-use-the-env-class) | The Layouts can be used to be a parent layout to the view |
