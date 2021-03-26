@@ -11,6 +11,9 @@ use SpaceMvc\Framework\Mvc\View;
  */
 class UsersController extends BaseController
 {
+    /** @var string $layout */
+    protected string $layout = 'backend';
+
     /**
      * index
      * @return View

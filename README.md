@@ -2,7 +2,7 @@
 
 | Tutorial  | Description |
 | -------| ----------- |
-| [Install&nbsp;Guide](#1-routes) | How to install space mvc on to your linux, windows or mac computer or server |
+| [Install&nbsp;Guide](#install-instructions) | How to install space mvc on to your linux, windows or mac computer or server |
 
 ## Quick Start Guide
 
@@ -10,9 +10,9 @@
 | -------| ----------- |
 | 1. [Routes](#1-routes) | The Routes can be used to create uris that point to controller actions |
 | 2. [Controllers](#2-controllers) | This Controllers can be used to manage the model data and view response output |
-| 3. [Models](#how-to-use-the-cache-class)  | The Models can be used to select, insert, create, update and delete database data  |
-| 4. [Views](#how-to-use-the-config-class) | This Views can be used to output html to the end user |
-| 5. [Layouts](#how-to-use-the-env-class) | The Layouts can be used to be a parent layout of the view |
+| 3. [Models](#3-models)  | The Models can be used to select, insert, create, update and delete database data  |
+| 4. [Views](#4-views) | This Views can be used to output html to the end user |
+| 5. [Layouts](#5-layouts) | The Layouts can be used to be a parent layout of the view |
 
 ## Available Library Classes
 
@@ -29,7 +29,7 @@
 | [Router](#how-to-use-the-router-class) | This class can be used to get the current selected route or a list of all available routes | 
 | [Session](#how-to-use-the-session-class) | This class can be use to set and get session data | 
 
-## Space MVC - Install instructions
+## Install instructions
 - git clone https://github.com/space-mvc/space-mvc.git
 - cp .env.example .env
 - composer install
@@ -54,8 +54,6 @@
 - This project requires the following plugin below installed to work correctly
 - This plugin will automatically be installed when you run the composer install command
 - https://github.com/space-mvc/space-mvc-framework.git
-
-
 
 ## 1. Routes 
 #### How to create a new Route
@@ -141,9 +139,45 @@ class User extends Model
 5. Update where it says ```$table = 'users';'``` to your new database table name
 6. Update where it says ```$fillable = []``` to your correct database table field names for your selected table
 
+## 4. Views
+ 
+#### How to create a view
+1. Create a new file inside this folder /resources/views/frontend/
+2. For example /resources/views/frontend/users/index.php
+3. Copy in the following template
+```html
+<h1>Users</h1>
+
+<p>This is the users page</p>
+```
+
+## 5. Layouts
+
+#### How to select a layout
+
+1. At the start of your controller add the new ```$layout``` like below
+2. Set the value to your new layout name the default is frontend.php
+```php
+/**
+ * Class UsersController
+ * @package App\Http\Controllers\Frontend
+ */
+class UsersController extends BaseController
+{
+    /** @var string $layout */
+    protected string $layout = 'frontend';
+```
+3. Create a new layout file inside ```/resources/layouts/```
+4. For example ```/resources/layouts/backend.php```
+5. Copy in the following template to use as a starting point
+```php
+This is the frontend layout<br />
+
+<?php echo !empty($content) ? $content : null; ?>
+```
+6. The ```$content``` variable will be the actual view response output
+
 ## General Information
-
-
 
 The ```$this->app``` variable contains access to all library classes below. 
 
