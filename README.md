@@ -1,5 +1,34 @@
 # space-mvc (A Lightweight PHP 8 MVC Framework)
 
+| Tutorial  | Description |
+| -------| ----------- |
+| 1. [Install Guide](#1-routes) | This is an install guide on how to install space mvc on to your linux, windows or mac computer or server |
+
+## Quick Start Guide
+
+| Class  | Description |
+| -------| ----------- |
+| 1. [Routes](#1-routes) | The routes can be used to create uris that point to controller actions |
+| 2. [Controllers](#2-controllers) | This Controllers can be used to store the business logic of your application |
+| 3. [Models](#how-to-use-the-cache-class)  | The Models can be used to select, insert, create, update and delete database data  |
+| 4. [Views](#how-to-use-the-config-class) | This Views can be used to output html to the end user |
+| 5. [Layouts](#how-to-use-the-env-class) | The Layouts can be used to be a parent layout to the view |
+
+## Available Library Classes
+
+| Class  | Description |
+| -------| ----------- |
+| [Asset](#how-to-use-the-assets-class) | This class can be used to store and retrieve HTML include attributes for css and javascript  |
+| [Cache](#how-to-use-the-cache-class)  | This class can be used to store and retrieve data to and from the cache  |
+| [Config](#how-to-use-the-config-class) | This class can be used to get the config files from the /config folder into an data array|
+| [Env](#how-to-use-the-env-class) | This class can be used to retrieve environment config data from the /.env file |
+| [Exception](#how-to-use-the-exception-class) | This class can be used to display exception messages to the user in html or json format |
+| [Log](#how-to-use-the-log-class)| This class can be used to write log entries to the log files (default: /storage/logs/app.log)|
+| [Path](#how-to-use-the-path-class) | This class can be used to retrieve config data from /config/paths.php | 
+| [Request](#how-to-use-the-request-class) | This class can be used to retrieve the current request uri, method, get and post data | 
+| [Router](#how-to-use-the-router-class) | This class can be used to get the current selected route or a list of all available routes | 
+| [Session](#how-to-use-the-session-class) | This class can be use to set and get session data | 
+
 ## Space MVC - Install instructions
 - git clone https://github.com/space-mvc/space-mvc.git
 - cp .env.example .env
@@ -26,30 +55,6 @@
 - This plugin will automatically be installed when you run the composer install command
 - https://github.com/space-mvc/space-mvc-framework.git
 
-## Quick Start Guide
-
-| Class  | Description |
-| -------| ----------- |
-| 1. [Routes](#1-routes) | The routes can be used to create uris that point to controller actions |
-| 2. [Controllers](#2-controllers) | This Controllers can be used to store the business logic of your application |
-| 3. [Models](#how-to-use-the-cache-class)  | The Models can be used to select, insert, create, update and delete database data  |
-| 4. [Views](#how-to-use-the-config-class) | This Views can be used to output html to the end user |
-| 5. [Layouts](#how-to-use-the-env-class) | The Layouts can be used to be a parent layout to the view |
-
-## Available Library Classes
-
-| Class  | Description |
-| -------| ----------- |
-| [Asset](#how-to-use-the-assets-class) | This class can be used to store and retrieve HTML include attributes for css and javascript  |
-| [Cache](#how-to-use-the-cache-class)  | This class can be used to store and retrieve data to and from the cache  |
-| [Config](#how-to-use-the-config-class) | This class can be used to get the config files from the /config folder into an data array|
-| [Env](#how-to-use-the-env-class) | This class can be used to retrieve environment config data from the /.env file |
-| [Exception](#how-to-use-the-exception-class) | This class can be used to display exception messages to the user in html or json format |
-| [Log](#how-to-use-the-log-class)| This class can be used to write log entries to the log files (default: /storage/logs/app.log)|
-| [Path](#how-to-use-the-path-class) | This class can be used to retrieve config data from /config/paths.php | 
-| [Request](#how-to-use-the-request-class) | This class can be used to retrieve the current request uri, method, get and post data | 
-| [Router](#how-to-use-the-router-class) | This class can be used to get the current selected route or a list of all available routes | 
-| [Session](#how-to-use-the-session-class) | This class can be use to set and get session data | 
 
 
 ## 1. Routes 
