@@ -42,7 +42,8 @@ The ```$this->app``` variable is automatically included and accessible in all co
 | [Env](#how-to-use-the-env-class) | This class can be used to retrieve environment config data from the .env file |
 | [Exception](#how-to-use-the-exception-class) | This class can be used to display exception messages to the user in html or json format |
 | [Log](#how-to-use-the-log-class)| This class can be used to write log entries to the log files |
-| [Path](#how-to-use-the-path-class) | This can be used to retrieve config data from /config/paths.php | 
+| [Path](#how-to-use-the-path-class) | This class can be used to retrieve config data from /config/paths.php | 
+| [Request](#how-to-use-the-request-class) | This class can be used to retrieve the current uri, method, get and post data | 
 | [Session](#how-to-use-the-session-class) | This class can be use to set and get session data | 
 
 
@@ -192,6 +193,52 @@ $results = $this->app->getPath()->get()['public']
 ```
 ```php
 /var/www/space-mvc/public
+```
+
+## How to use the Request Class
+
+#### Get the current request uri
+```php
+$uri = $this->app->getRequest()->getUri();
+```
+
+```php
+/books/action
+```
+
+#### Get the current request method
+
+```php
+$method = $this->app->getRequest()->getMethod();
+```
+
+```php
+GET
+```
+#### Get the current request $_GET data
+
+```php
+$get = $this->app->getRequest()->get();
+```
+```php
+[
+  'field_1' => 'value_1',
+  'field_2' => 'value_2',
+  'field_3' => 'value_3',
+]
+```
+
+#### Get the current request $_POST data
+
+```php
+$post = $this->app->getRequest()->post();
+```
+```php
+[
+  'field_1' => 'value_1',
+  'field_2' => 'value_2',
+  'field_3' => 'value_3',
+]
 ```
 
 ## How to use the Session Class
