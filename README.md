@@ -171,9 +171,26 @@ class UsersController extends BaseController
 4. For example ```/resources/layouts/backend.php```
 5. Copy in the following template to use as a starting point
 ```php
-This is the backend layout<br />
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
 
-<?php echo !empty($content) ? $content : null; ?>
+  <title>Page Title</title>
+
+  <meta name="description" content="Page Description">
+  <meta name="author" content="Page Author">
+
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+
+  <?php echo !empty($content) ? $content : null; ?>
+  
+  <script src="js/scripts.js"></script>
+  
+</body>
+</html>
 ```
 6. The ```$content``` variable will be the actual view response output
 
