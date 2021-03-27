@@ -169,7 +169,7 @@ class UsersController extends BaseController
 ```
 3. Create a new layout file inside ```/resources/layouts/```
 4. For example ```/resources/layouts/backend.php```
-5. Copy in the following template to use as a starting point
+5. Copy in the following html5 template to use as a starting point
 ```php
 <!doctype html>
 <html lang="en">
