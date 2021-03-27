@@ -142,8 +142,8 @@ class User extends Model
 ## 4. Views
  
 #### How to create a view
-1. Create a new file inside this folder /resources/views/frontend/
-2. For example /resources/views/frontend/users/index.php
+1. Create a new file inside this folder /resources/views/backend/
+2. For example /resources/views/backend/users/index.php
 3. Copy in the following template
 ```html
 <h1>Users</h1>
@@ -165,7 +165,7 @@ class User extends Model
 class UsersController extends BaseController
 {
     /** @var string $layout */
-    protected string $layout = 'frontend';
+    protected string $layout = 'backend';
 ```
 3. Create a new layout file inside ```/resources/layouts/```
 4. For example ```/resources/layouts/backend.php```
