@@ -10,13 +10,5 @@ use SpaceMvc\Framework\Mvc\Model;
  */
 class User extends Model
 {
-    /** @var string $table */
-    protected static string $table = 'users';
 
-    /** @var array $fillable  */
-    protected static array $fillable = [
-        'name',
-        'email',
-        'password'
-    ];
 }

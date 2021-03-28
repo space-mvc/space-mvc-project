@@ -22,11 +22,12 @@ class UsersController extends BaseController
      */
     public function index() : View
     {
-        $users = User::select()->get();
-
-        return $this->app->getView('backend.users.index', [
-            'users' => $users
-        ]);
+        dump(User::first()->attributes());
+        dump(User::find('all'));
+//
+//        return $this->app->getView('backend.users.index', [
+//            'users' => $users
+//        ]);
     }
 
     /**
@@ -48,7 +49,7 @@ class UsersController extends BaseController
         $request = $this->app->getRequest();
 
         /** @var User $user */
-        $user = User::create($request->post());
+       // $user = User::create($request->post());
 
         // redirect to /admin/users
         header('Location: /admin/users', 0);
