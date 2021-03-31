@@ -20,7 +20,7 @@ class CrudController extends BaseController
     protected string $modelName = 'App\Model\User';
 
     /** @var string $viewBase */
-    protected string $viewBase = 'backend.users';
+    protected string $viewBase = 'backend.crud';
 
     /** @var string $uriBase */
     protected string $uriBase = '/admin/users';
@@ -29,7 +29,7 @@ class CrudController extends BaseController
      * index
      * @return View
      */
-    public function index()
+    public function index(): View
     {
         $results = $this->modelName::find('all');
 
@@ -49,9 +49,8 @@ class CrudController extends BaseController
 
     /**
      * store
-     * @return View
      */
-    public function store() : View
+    public function store()
     {
         /** @var Request $post */
         $request = $this->app->getRequest();
@@ -70,16 +69,30 @@ class CrudController extends BaseController
     public function edit() : View
     {
         $id = $this->app->getRequest()->get('id');
+
         $result = $this->modelName::find(['id' => $id]);
+        if(!empty($result)) {
+            $result = $result->attributes();
+        }
 
-        dump($result);
-
-        return $this->app->getView($this->viewBase.'.edit');
+        return $this->app->getView($this->viewBase.'.edit', [
+            'result' => $result
+        ]);
     }
 
-    public function update()
+    /**
+     * update
+     */
+    public function update(): void
     {
+        $id = $this->app->getRequest()->get('id');
+        $data = $this->app->getRequest()->post();
 
+        $result = $this->modelName::find(['id' => $id]);
+        $result->update_attributes($data);
+        $result->save();
+
+        header('Location: '.$this->uriBase, 0);
     }
 
     /**
@@ -88,11 +101,28 @@ class CrudController extends BaseController
      */
     public function delete(): View
     {
-        return $this->app->getView($this->viewBase.'.delete');
+        $id = $this->app->getRequest()->get('id');
+
+        $result = $this->modelName::find(['id' => $id]);
+        if(!empty($result)) {
+            $result = $result->attributes();
+        }
+
+        return $this->app->getView($this->viewBase.'.delete', [
+            'result' => $result
+        ]);
     }
 
-    public function destroy()
+    /**
+     * destroy
+     */
+    public function destroy(): void
     {
+        $id = $this->app->getRequest()->get('id');
 
+        $result = $this->modelName::find(['id' => $id]);
+        $result->delete();
+
+        header('Location: '.$this->uriBase, 0);
     }
 }

@@ -14,9 +14,6 @@ class UsersController extends CrudController
     /** @var string $modelName */
     protected string $modelName = 'App\Model\User';
 
-    /** @var string $viewBase */
-    protected string $viewBase = 'backend.users';
-
     /** @var string $uriBase */
     protected string $uriBase = '/admin/users';
 }

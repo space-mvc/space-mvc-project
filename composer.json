@@ -18,9 +18,10 @@
         }
     ],
     "require": {
-        "php" : "~8.0",
-        "space-mvc/space-mvc-framework":"dev-main",
-        "space-mvc/space-mvc-active-record":"*"
+        "php": "~8.0",
+        "robmorgan/phinx": "^0.12.6",
+        "space-mvc/space-mvc-active-record": "*",
+        "space-mvc/space-mvc-framework": "dev-main"
     },
     "require-dev": {
         "phpunit/phpunit" : ">=8.0"

@@ -30,11 +30,9 @@
 
                 ?>
                 <td>
-                    <a href="/admin/users/1/edit"><button>Edit</button></a> |
-                    <a href="/admin/users/1/delete"><button>Delete</button></a>
+                    <a href="/admin/users/<?php echo !empty($result->id) ? $result->id : null; ?>/edit"><button>Edit</button></a> |
+                    <a href="/admin/users/<?php echo !empty($result->id) ? $result->id : null; ?>/delete"><button>Delete</button></a>
                 </td>
-
-
                 <?php
 
                 echo '</tr>';
