@@ -9,7 +9,7 @@ namespace App\Http\Controllers\Admin;
 class UsersController extends CrudController
 {
     /** @var string $layout */
-    protected string $layout = 'backend';
+    protected string $layout = 'admin';
 
     /** @var string $modelName */
     protected string $modelName = 'App\Model\User';

@@ -14,13 +14,13 @@ use SpaceMvc\Framework\Mvc\View;
 class CrudController extends BaseController
 {
     /** @var string $layout */
-    protected string $layout = 'backend';
+    protected string $layout = 'admin';
 
     /** @var string $modelName */
     protected string $modelName = 'App\Model\User';
 
     /** @var string $viewBase */
-    protected string $viewBase = 'backend.crud';
+    protected string $viewBase = 'admin.crud';
 
     /** @var string $uriBase */
     protected string $uriBase = '/admin/users';
