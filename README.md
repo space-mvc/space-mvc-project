@@ -338,16 +338,16 @@ class Post extends Model
 2. Set the value to your new layout name the default is frontend.php
 ```php
 /**
- * Class UsersController
+ * Class PostsController
  * @package App\Http\Controllers\Frontend
  */
-class UsersController extends BaseController
+class PostsController extends BaseController
 {
     /** @var string $layout */
-    protected string $layout = 'backend';
+    protected string $layout = 'admin';
 ```
 3. Create a new layout file inside ```/resources/layouts/```
-4. For example ```/resources/layouts/backend.php```
+4. For example ```/resources/layouts/admin.php```
 5. Copy in the following Html 5 template to use as a starting point
 ```php
 <!doctype html>
