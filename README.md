@@ -9,10 +9,11 @@
 | Class  | Description |
 | -------| ----------- |
 | 1. [Routes](#1-routes) | The Routes can be used to create uris that point to controller actions |
-| 2. [Controllers](#2-controllers) | This Controllers can be used to manage the model data and view response output |
-| 3. [Models](#3-models)  | The Models can be used to select, insert, create, update and delete database data  |
-| 4. [Views](#4-views) | This Views can be used to output html to the end user |
-| 5. [Layouts](#5-layouts) | The Layouts can be used to be a parent layout of the view |
+| 2. [Controllers](#2-controllers) | This Controller files can be used to manage the model data and view response output |
+| 3. [Migrations](#3-migrations)  | The Migrations files can be used to create, alter or drop database tables  |
+| 4. [Models](#4-models)  | The Model files can be used to select, insert, create, update and delete database data  |
+| 5. [Views](#5-views) | This View files can be used to output html to the end user |
+| 6. [Layouts](#6-layouts) | The Layout files can be used to be a parent layout of the view |
 
 ## Available Library Classes
 
@@ -102,7 +103,51 @@ class UsersController extends BaseController
 4. Change where it says ```UsersController``` to your new Controller Name
 5. Change where it says ```frontend.users.index``` to your new view name for example ```frontend.examples.index```
 
-## 3. Models
+## 3. Migrations
+
+1. Create a file inside the folder /database/migrations
+2. For example 2021_03_03_0000002_create_posts_table.php
+3. Copy the template below into the file
+4. Update the table creation settings as desired
+
+```php
+<?php
+
+declare(strict_types=1);
+
+use \SpaceMvc\Framework\Library\Migration;
+
+/**
+ * Class CreateUsersTable
+ */
+final class CreateUsersTable extends Migration
+{
+    /**
+     * up
+     */
+    public function up(): void
+    {
+        $table = $this->table('users');
+        $table->addColumn('first_name', 'string')
+            ->addColumn('last_name', 'string')
+            ->addColumn('email', 'string')
+            ->addColumn('password', 'string')
+            ->addColumn('gender', 'string')
+            ->addColumn('date_of_birth', 'string')
+            ->create();
+    }
+
+    /**
+     * down
+     */
+    public function down(): void
+    {
+        $this->table('users')->drop()->save();
+    }
+}
+```
+
+## 4. Models
 
 #### How to create a new Model file
 1. Create a new file inside /app/Model
@@ -139,7 +184,7 @@ class User extends Model
 5. Update where it says ```$table = 'users';'``` to your new database table name
 6. Update where it says ```$fillable = []``` to your correct database table field names for your selected table
 
-## 4. Views
+## 5. Views
  
 #### How to create a view
 1. Create a new file inside this folder /resources/views/backend/
@@ -151,7 +196,7 @@ class User extends Model
 <p>This is the users page</p>
 ```
 
-## 5. Layouts
+## 6. Layouts
 
 #### How to select a layout
 

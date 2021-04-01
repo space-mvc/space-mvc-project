@@ -19,6 +19,7 @@
     ],
     "require": {
         "php": "~8.0",
+        "filp/whoops": "^2.12",
         "robmorgan/phinx": "^0.12.6",
         "space-mvc/space-mvc-active-record": "*",
         "space-mvc/space-mvc-framework": "dev-main"
