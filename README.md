@@ -23,7 +23,6 @@
 | [Cache](#how-to-use-the-cache-class)  | This class can be used to store and retrieve data to and from the cache  |
 | [Config](#how-to-use-the-config-class) | This class can be used to get the config files from the /config folder into an data array|
 | [Env](#how-to-use-the-env-class) | This class can be used to retrieve environment config data from the /.env file |
-| [Exception](#how-to-use-the-exception-class) | This class can be used to display exception messages to the user in html or json format |
 | [Log](#how-to-use-the-log-class)| This class can be used to write log entries to the log files (default: /storage/logs/app.log)|
 | [Path](#how-to-use-the-path-class) | This class can be used to retrieve config data from /config/paths.php | 
 | [Request](#how-to-use-the-request-class) | This class can be used to retrieve the current request uri, method, get and post data | 
@@ -421,18 +420,6 @@ $configPaths = $this->app->getConfig()->setConfig('paths')->get();
 #### Get env properties
 ```php
 $envDbHostname = $this->app->getEnv()->get('DB_HOSTNAME', '127.0.0.1');
-```
-
-## How to use the Exception Class
-
-#### Display html exception message
-```php
-$this->app->getException()->throw("There was a problem creating a new user", 501);
-```
-
-#### Display json exception message
-```php
-$this->app->getException()->throwJson("There was a problem creating a new user", 501);
 ```
 
 ## How to use the Log Class
