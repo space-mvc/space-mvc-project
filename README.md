@@ -11,7 +11,7 @@
 | 1. [Routes](#1-routes) | The Routes can be used to create uris that point to controller actions |
 | 2. [Controllers](#2-controllers) | This Controller files can be used to manage the model data and view response output |
 | 3. [Migrations](#3-migrations)  | The Migrations files can be used to create, alter or drop database tables  |
-| 4. [Seeders](#4-database-seeds) | The Database seeds files contains insert statements to pre populate the database  |
+| 4. [Seeds](#4-database-seeds) | The Database seeds files contains insert statements to pre populate the database  |
 | 5. [Models](#5-models)  | The Model files can be used to select, insert, create, update and delete database data  |
 | 6. [Views](#6-views) | This View files can be used to output html to the end user |
 | 7. [Layouts](#7-layouts) | The Layout files can be used to be a parent layout of the view |
