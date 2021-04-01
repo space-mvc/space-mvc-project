@@ -20,7 +20,6 @@
 
 | Class  | Description |
 | -------| ----------- |
-| [Asset](#how-to-use-the-assets-class) | This class can be used to store and retrieve HTML include attributes for css and javascript  |
 | [Cache](#how-to-use-the-cache-class)  | This class can be used to store and retrieve data to and from the cache  |
 | [Config](#how-to-use-the-config-class) | This class can be used to get the config files from the /config folder into an data array|
 | [Env](#how-to-use-the-env-class) | This class can be used to retrieve environment config data from the /.env file |
@@ -380,66 +379,6 @@ The ```$this->app``` variable contains access to all library classes below.
 The ```$this->app``` variable is automatically included and accessible in all controllers
 
 ## Available Library Classes
-
-## How to use the Assets Class
-#### Add HTML Asset
-```php
-$this->app->getAsset()->add('css', '/assets/css/sample.css');
-$this->app->getAsset()->add('js', '/assets/js/sample.js');
-```
-
-#### List HTML Assets
-```php
-$assets = $this->app->getAsset()->get();
-```
-
-```json
-{
-  "css" : [
-    {
-      "url":"/assets/css/sample.css",
-      "attributes":[]
-    }
-  ],
-  "js" : [
-    {
-      "url":"/assets/js/sample.js",
-      "attributes":[]
-    }
-  ]
-}
-```
-
-#### List HTML Assets - Select Single Type
-```php
-$assets = $this->app->getAsset()->get('css');
-```
-
-```json
-[
-  {
-    "url":"/assets/css/sample.css",
-    "attributes":[]
-  }
-]
-```
-
-#### Render HTML Assets
-##### CSS
-```php
-echo $this->app->getAsset()->render('css');
-```
-```html
-<link type="text/css" rel="stylesheet" src="/example.com/assets/css/sample.css">
-```
-
-##### Javascript
-```php
-echo $this->app->getAsset()->render('js');
-```
-```html
-<script type="text/javascript" src="/example.com/assets/js/sample.js">
-```
 
 ## How to use the Cache Class
 
