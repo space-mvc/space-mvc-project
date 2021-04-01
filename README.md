@@ -75,7 +75,7 @@
 
 #### How to create a new Controller
 1. Create a new file in the Controllers folder /app/Http/Controllers/Frontend
-2. For example UsersController.php
+2. For example PostsController.php
 3. Add the following template
 ```php
 <?php
@@ -200,8 +200,8 @@ class PostsController extends BaseController
 }
 
 ```
-4. Change where it says ```UsersController``` to your new Controller Name
-5. Change where it says ```frontend.users.index``` to your new view name for example ```frontend.examples.index```
+4. Change where it says ```PostsController``` to your new Controller Name
+5. Change where it says ```admin.posts.index``` to your new view name for example ```admin.examples.index```
 
 ## 3. Migrations
 
@@ -218,22 +218,22 @@ declare(strict_types=1);
 use \SpaceMvc\Framework\Library\Migration;
 
 /**
- * Class CreateUsersTable
+ * Class CreatePostsTable
  */
-final class CreateUsersTable extends Migration
+final class CreatePostsTable extends Migration
 {
     /**
      * up
      */
     public function up(): void
     {
-        $table = $this->table('users');
-        $table->addColumn('first_name', 'string')
-            ->addColumn('last_name', 'string')
-            ->addColumn('email', 'string')
-            ->addColumn('password', 'string')
-            ->addColumn('gender', 'string')
-            ->addColumn('date_of_birth', 'string')
+        $table = $this->table('posts');
+        $table->addColumn('title', 'string')
+            ->addColumn('subject', 'string')
+            ->addColumn('description', 'string')
+            ->addColumn('body', 'text')
+            ->addColumn('created_at', 'datetime')
+            ->addColumn('updated_at', 'datetime')
             ->create();
     }
 
@@ -242,7 +242,7 @@ final class CreateUsersTable extends Migration
      */
     public function down(): void
     {
-        $this->table('users')->drop()->save();
+        $this->table('posts')->drop()->save();
     }
 }
 ```
@@ -269,13 +269,13 @@ class UserSeeder extends Seed
      */
     public function run(): void
     {
-        $this->insert('users', [
-            'first_name' => 'Space',
-            'last_name' => 'Mvc',
-            'email' => 'space@space-mvc.com',
-            'password' => md5('password'),
-            'gender' => 'male',
-            'date_of_birth' => date('Y-m-d')
+        $this->insert('posts', [
+            'title' => 'Post Title',
+            'subject' => 'Post Subject',
+            'description' => 'Post Description',
+            'body' => '<p>This is my text</p>',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
         ]);
     }
 }
@@ -285,7 +285,7 @@ class UserSeeder extends Seed
 
 #### How to create a new Model file
 1. Create a new file inside /app/Model
-2. For example User.php
+2. For example Post.php
 3. Copy the following template into the file
 ```php
 <?php
@@ -295,34 +295,34 @@ namespace App\Model;
 use SpaceMvc\Framework\Mvc\Model;
 
 /**
- * Class User
+ * Class Post
  * @package App\Model
  */
-class User extends Model
+class Post extends Model
 {
     /** @var string $table */
-    protected static string $table = 'users';
+    protected static string $table = 'posts';
 
     /** @var array $fillable  */
     protected static array $fillable = [
-        'first_name',
-        'last_name',
-        'email',
-        'password',
+        'title',
+        'subject',
+        'description',
+        'body',
         'created_at',
         'updated_at'
     ];
 }
 ```
-4. Update where it says ```class User``` to your new Model name
-5. Update where it says ```$table = 'users';'``` to your new database table name
+4. Update where it says ```class Post``` to your new Model name
+5. Update where it says ```$table = 'posts';'``` to your new database table name
 6. Update where it says ```$fillable = []``` to your correct database table field names for your selected table
 
 ## 6. Views
  
 #### How to create a view
 1. Create a new file inside this folder /resources/views/backend/
-2. For example /resources/views/backend/users/index.php
+2. For example /resources/views/backend/posts/index.php
 3. Copy in the following template
 ```html
 <h1>Users</h1>
