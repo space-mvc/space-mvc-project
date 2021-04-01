@@ -207,7 +207,7 @@ class PostsController extends BaseController
 2. For example 2021_03_03_0000002_create_posts_table.php
 3. Copy the template below into the file
 4. Update the table creation settings as desired
-5. Run this command to create all Database table - ```vendor/bin/phinx migrate```
+5. Run this command to create all database table - ```vendor/bin/phinx migrate```
 6. Run this command to insert seed data - ```vendor/bin/phinx seed:run```
 7. Run this command to remove tables - ```vendor/bin/phinx rollback```
 
