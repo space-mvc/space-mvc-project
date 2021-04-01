@@ -11,9 +11,10 @@
 | 1. [Routes](#1-routes) | The Routes can be used to create uris that point to controller actions |
 | 2. [Controllers](#2-controllers) | This Controller files can be used to manage the model data and view response output |
 | 3. [Migrations](#3-migrations)  | The Migrations files can be used to create, alter or drop database tables  |
-| 4. [Models](#4-models)  | The Model files can be used to select, insert, create, update and delete database data  |
-| 5. [Views](#5-views) | This View files can be used to output html to the end user |
-| 6. [Layouts](#6-layouts) | The Layout files can be used to be a parent layout of the view |
+| 4. [Migrations](#4-database-seeds) | The Database seeds files contains insert statements to pre populate the database  |
+| 5. [Models](#5-models)  | The Model files can be used to select, insert, create, update and delete database data  |
+| 6. [Views](#6-views) | This View files can be used to output html to the end user |
+| 7. [Layouts](#7-layouts) | The Layout files can be used to be a parent layout of the view |
 
 ## Available Library Classes
 
@@ -147,7 +148,41 @@ final class CreateUsersTable extends Migration
 }
 ```
 
-## 4. Models
+## 4. Database Seeds
+
+1. Create a file inside the folder /database/seeds
+2. For example PostSeeder.php
+3. Copy the template below into the file
+4. Update the table creation settings as desired
+
+```php
+<?php
+
+use SpaceMvc\Framework\Library\Seed;
+
+/**
+ * Class UserSeeder
+ */
+class UserSeeder extends Seed
+{
+    /**
+     * run
+     */
+    public function run(): void
+    {
+        $this->insert('users', [
+            'first_name' => 'Space',
+            'last_name' => 'Mvc',
+            'email' => 'space@space-mvc.com',
+            'password' => md5('password'),
+            'gender' => 'male',
+            'date_of_birth' => date('Y-m-d')
+        ]);
+    }
+}
+```
+
+## 5. Models
 
 #### How to create a new Model file
 1. Create a new file inside /app/Model
@@ -184,7 +219,7 @@ class User extends Model
 5. Update where it says ```$table = 'users';'``` to your new database table name
 6. Update where it says ```$fillable = []``` to your correct database table field names for your selected table
 
-## 5. Views
+## 6. Views
  
 #### How to create a view
 1. Create a new file inside this folder /resources/views/backend/
@@ -196,7 +231,7 @@ class User extends Model
 <p>This is the users page</p>
 ```
 
-## 6. Layouts
+## 7. Layouts
 
 #### How to select a layout
 
