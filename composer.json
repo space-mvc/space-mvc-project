@@ -29,12 +29,12 @@
     },
     "repositories": [
       {
-        "type": "vcs",
-        "url": "https://github.com/space-mvc/space-mvc-framework"
+        "type": "git",
+        "url": "https://github.com/space-mvc/space-mvc-framework.git"
       },
       {
-        "type": "vcs",
-        "url": "https://github.com/space-mvc/space-mvc-active-record"
+        "type": "git",
+        "url": "https://github.com/space-mvc/space-mvc-active-record.git"
       }
     ],
     "autoload": {
