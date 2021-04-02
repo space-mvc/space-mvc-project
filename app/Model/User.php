@@ -11,6 +11,7 @@ use SpaceMvc\Framework\Mvc\Model;
 class User extends Model
 {
     private array $attributes = [
-        'first_name'
+        'first_name' => '',
+        'last_name' => ''
     ];
 }
