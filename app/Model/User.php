@@ -10,9 +10,5 @@ use SpaceMvc\Framework\Mvc\Model;
  */
 class User extends Model
 {
-    /** @var array $attributes */
-    protected array $attributes = [
-        'first_name' => [],
-        'last_name' => []
-    ];
+    static $attr_accessible = array('first_name','last_name');
 }
