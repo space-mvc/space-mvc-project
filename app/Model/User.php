@@ -12,7 +12,7 @@ class User extends Model
 {
     /** @var array $attributes */
     protected array $attributes = [
-        'first_name',
-        'last_name'
+        'first_name' => [],
+        'last_name' => []
     ];
 }
