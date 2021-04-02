@@ -10,5 +10,7 @@ use SpaceMvc\Framework\Mvc\Model;
  */
 class User extends Model
 {
-
+    protected array $attributes = [
+        'first_name'
+    ];
 }
