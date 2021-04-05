@@ -63,11 +63,52 @@ Routes are used to direct the current browser url to the correct controller acti
 2. Add a new entry to the array
 ```php
 [
-    'name' => 'frontend.posts.index',
-    'uri' => '/posts',
-    'controller' => \App\Http\Controllers\Frontend\PostsControllerController::class,
-    'action' => 'index',
-],
+    [
+        'name' => 'admin.posts.index',
+        'uri' => '/admin/posts',
+        'controller' => \App\Http\Controllers\Admin\PostsController::class,
+        'action' => 'index',
+    ],
+    [
+        'name' => 'admin.posts.create',
+        'uri' => '/admin/posts/create',
+        'controller' => \App\Http\Controllers\Admin\PostsController::class,
+        'action' => 'create',
+    ],
+    [
+        'name' => 'admin.posts.store',
+        'uri' => '/admin/posts/create',
+        'method' => 'POST',
+        'controller' => \App\Http\Controllers\Admin\PostsController::class,
+        'action' => 'store',
+    ],
+    [
+        'name' => 'admin.posts.edit',
+        'uri' => '/admin/posts/{id}/edit',
+        'controller' => \App\Http\Controllers\Admin\PostsController::class,
+        'action' => 'edit',
+    ],
+    [
+        'name' => 'admin.posts.update',
+        'uri' => '/admin/posts/{id}/update',
+        'method' => 'PUT',
+        'controller' => \App\Http\Controllers\Admin\PostsController::class,
+        'action' => 'update',
+    ],
+    [
+        'name' => 'admin.posts.delete',
+        'uri' => '/admin/posts/{id}/delete',
+        'controller' => \App\Http\Controllers\Admin\PostsController::class,
+        'action' => 'delete',
+    ],
+    [
+        'name' => 'admin.posts.destroy',
+        'uri' => '/admin/posts/{id}/destroy',
+        'method' => 'DELETE',
+        'controller' => \App\Http\Controllers\Admin\PostsController::class,
+        'action' => 'destroy',
+    ],
+]
 ```
 
 ## 2. Controllers
