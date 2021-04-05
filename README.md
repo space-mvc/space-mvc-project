@@ -60,7 +60,7 @@
 Routes are used to direct the current browser url to the correct controller action function
 
 1. Open the file /routes/web.php
-2. Add a new entry to the array
+2. Add new entries to the array like below for example
 ```php
 [
     [
