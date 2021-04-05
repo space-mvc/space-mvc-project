@@ -1,8 +1,8 @@
 <?php
 
-use SpaceMvc\Framework\Library\Abstract\MigrationAbstract;
+use SpaceMvc\Framework\Library\Migration;
 
-final class V20210402141919 extends MigrationAbstract
+final class V20210402141919 extends Migration
 {
     /**
      * up

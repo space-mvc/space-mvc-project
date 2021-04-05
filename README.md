@@ -244,7 +244,7 @@ class PostsController extends BaseController
 Migrations are used to create new database tables
 
 1. Create a file inside the folder /database/migrations
-2. For example 2021_03_03_0000002_create_posts_table.php
+2. For example database/migrations/20210402141920.php  (Year-Month-Day Timestamp Format)
 3. Copy the template below into the file
 4. Update the table creation settings as desired
 5. Run this command to create all database table - ```vendor/bin/phinx migrate```
@@ -254,9 +254,9 @@ Migrations are used to create new database tables
 ```php
 <?php
 
-use \SpaceMvc\Framework\Library\Abstract\MigrationAbstract;
+use SpaceMvc\Framework\Library\Migration;
 
-final class V20210402141920 extends MigrationAbstract
+final class V20210402141920 extends Migration
 {
     /**
      * up
@@ -286,7 +286,7 @@ final class V20210402141920 extends MigrationAbstract
 Database seeds are used to insert test data into the database tables
 
 1. Create a file inside the folder /database/seeds
-2. For example 20210404000001.php (Year-Month-Day Timestamp)
+2. For example UserSeeder.php 
 3. Copy the template below into the file
 4. Update the table creation settings as desired
 5. Run the database seeds to insert test data using ```vendor/bin/phinx seed:run```
