@@ -81,7 +81,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\BaseController;
-use SpaceMvc\Framework\Library\Request;
 use SpaceMvc\Framework\Mvc\View;
 use App\Model\Post;
 
@@ -121,13 +120,10 @@ class PostsController extends BaseController
      */
     public function store(): void
     {
-        /** @var Request $post */
-        $request = $this->app->getRequest();
+        $post = $this->app->getRequest()->post();
 
-        /** @var Model $result */
-        $result = Post::create($request->post());
+        $result = Post::create($post);
 
-        // redirect to uri base
         header('Location: /admin/posts', 0);
     }
 
@@ -140,7 +136,7 @@ class PostsController extends BaseController
         $id = $this->app->getRequest()->get('id');
 
         $result = Post::find(['id' => $id]);
-        
+
         if(!empty($result)) {
             $result = $result->attributes();
         }
@@ -173,7 +169,7 @@ class PostsController extends BaseController
     {
         $id = $this->app->getRequest()->get('id');
         $result = Post::find(['id' => $id]);
-        
+
         if(!empty($result)) {
             $result = $result->attributes();
         }
@@ -196,7 +192,6 @@ class PostsController extends BaseController
         header('Location: /admin/posts', 0);
     }
 }
-
 ```
 4. Change where it says ```PostsController``` to your new Controller Name
 5. Change where it says ```admin.posts.index``` to your new view name for example ```admin.examples.index```
@@ -214,14 +209,9 @@ class PostsController extends BaseController
 ```php
 <?php
 
-declare(strict_types=1);
+use \SpaceMvc\Framework\Library\Abstract\MigrationAbstract;
 
-use \SpaceMvc\Framework\Library\Migration;
-
-/**
- * Class CreatePostsTable
- */
-final class CreatePostsTable extends Migration
+final class V20210402141920 extends MigrationAbstract
 {
     /**
      * up
@@ -231,10 +221,9 @@ final class CreatePostsTable extends Migration
         $table = $this->table('posts');
         $table->addColumn('title', 'string')
             ->addColumn('subject', 'string')
-            ->addColumn('description', 'string')
+            ->addColumn('description', 'text')
             ->addColumn('body', 'text')
-            ->addColumn('created_at', 'datetime')
-            ->addColumn('updated_at', 'datetime')
+            ->addTimestamps()
             ->create();
     }
 
@@ -426,7 +415,7 @@ class Post extends Model
                 </div>
                 <div class="form-clear"></div>
             </div>
-            
+
             <!-- submit -->
             <div class="form-row">
                 <div class="form-cell">
@@ -473,7 +462,7 @@ class Post extends Model
                     <label for="title">Title</label>
                 </div>
                 <div class="form-cell">
-                    <input type="text" name="title" placeholder="Title" value="<?php echo !empty($data['result']['id']) ? $data['result']['id'] : null; ?>">
+                    <input type="text" name="title" placeholder="Title" value="<?php echo !empty($data['result']['title']) ? $data['result']['title'] : null; ?>">
                 </div>
                 <div class="form-clear"></div>
             </div>
@@ -557,7 +546,7 @@ class Post extends Model
                     <label for="title">Title</label>
                 </div>
                 <div class="form-cell">
-                    <input type="text" name="title" placeholder="Title" value="<?php echo !empty($data['result']['id']) ? $data['result']['id'] : null; ?>" readonly="readonly" disabled="disabled">
+                    <input type="text" name="title" placeholder="Title" value="<?php echo !empty($data['result']['title']) ? $data['result']['title'] : null; ?>" readonly="readonly" disabled="disabled">
                 </div>
                 <div class="form-clear"></div>
             </div>
