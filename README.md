@@ -323,13 +323,13 @@ class Post extends Model
 ## 6. Views
  
 #### How to create a view
-1. Create a new file inside this folder /resources/views/backend/
-2. For example /resources/views/backend/posts/index.php
+1. Create a new file inside this folder /resources/views/admin/
+2. For example /resources/views/admin/posts/index.php
 3. Copy in the following template
 ```html
 <h1>Users</h1>
 
-<p>This is the users page</p>
+<p>This is the posts admin page</p>
 ```
 
 ## 7. Layouts
