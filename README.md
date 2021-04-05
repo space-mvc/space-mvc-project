@@ -251,9 +251,10 @@ final class CreatePostsTable extends Migration
 ## 4. Database Seeds
 
 1. Create a file inside the folder /database/seeds
-2. For example PostSeeder.php
+2. For example 20210404000001.php (Year-Month-Day Timestamp)
 3. Copy the template below into the file
 4. Update the table creation settings as desired
+5. Run the database seeds to insert test data using ```vendor/bin/phinx seed:run```
 
 ```php
 <?php
