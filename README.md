@@ -696,9 +696,9 @@ class PostsController extends BaseController
 
 ## General Information
 
-The ```$this->app``` variable contains access to all library classes below. 
+- The ```$this->app``` variable contains access to all library classes below. 
 
-The ```$this->app``` variable is automatically included and accessible in all controllers
+- The ```$this->app``` variable is automatically included and accessible in all controllers
 
 - If you followed all steps above to create the PostsController then you can now visit /admin/posts in your browser 
   to view the pages you just created
