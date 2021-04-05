@@ -693,15 +693,14 @@ class PostsController extends BaseController
 </html>
 ```
 6. The ```$content``` variable will be the actual view response output
-
+7. If you followed all steps above to create the PostsController then you can now visit /admin/posts in your browser
+   to view the pages you just created
+   
 ## General Information
 
 - The ```$this->app``` variable contains access to all library classes below. 
 
-- The ```$this->app``` variable is automatically included and accessible in all controllers
-
-- If you followed all steps above to create the PostsController then you can now visit /admin/posts in your browser 
-  to view the pages you just created
+- The ```$this->app``` variable is automatically included and accessible in all controller
 
 ## Available Library Classes
 
