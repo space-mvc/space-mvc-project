@@ -57,6 +57,7 @@
 
 ## 1. Routes 
 #### How to create a new Route
+Routes are used to direct the current browser url to the correct controller action function
 
 1. Open the file /routes/web.php
 2. Add a new entry to the array
@@ -72,6 +73,8 @@
 ## 2. Controllers
 
 #### How to create a new Controller
+Controllers are used to store the main logic of your application
+
 1. Create a new file in the Controllers folder /app/Http/Controllers/Frontend
 2. For example PostsController.php
 3. Add the following template
@@ -197,6 +200,7 @@ class PostsController extends BaseController
 5. Change where it says ```admin.posts.index``` to your new view name for example ```admin.examples.index```
 
 ## 3. Migrations
+Migrations are used to create new database tables
 
 1. Create a file inside the folder /database/migrations
 2. For example 2021_03_03_0000002_create_posts_table.php
@@ -238,6 +242,7 @@ final class V20210402141920 extends MigrationAbstract
 ```
 
 ## 4. Database Seeds
+Database seeds are used to insert test data into the database tables
 
 1. Create a file inside the folder /database/seeds
 2. For example 20210404000001.php (Year-Month-Day Timestamp)
@@ -275,6 +280,8 @@ class UserSeeder extends Seed
 ## 5. Models
 
 #### How to create a new Model file
+Models are used to select, create, update and delete data from the database tables
+
 1. Create a new file inside /app/Model
 2. For example Post.php
 3. Copy the following template into the file
@@ -312,6 +319,7 @@ class Post extends Model
 ## 6. Views
  
 #### How to create a view
+Views are used to output HTML web pages to the end user
 1. Create a new file inside this folder /resources/views/admin/
 2. For example /resources/views/admin/posts/index.php
 3. Copy in the following templates
@@ -604,6 +612,7 @@ class Post extends Model
 ## 7. Layouts
 
 #### How to select a layout
+Layouts are used as a global parent template which will contain each view as the $content
 
 1. At the start of your controller add the new ```$layout``` like below
 2. Set the value to your new layout name the default is frontend.php
