@@ -653,7 +653,7 @@ Views are used to output HTML web pages to the end user
 ## 7. Layouts
 
 #### How to select a layout
-Layouts are used as a global parent template which will contain each view as the $content
+Layouts are used as a global parent template which will contain each view as the $content variable
 
 1. At the start of your controller add the new ```$layout``` like below
 2. Set the value to your new layout name the default is frontend.php
