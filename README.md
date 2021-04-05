@@ -116,7 +116,7 @@ Routes are used to direct the current browser url to the correct controller acti
 #### How to create a new Controller
 Controllers are used to store the main logic of your application
 
-1. Create a new file in the Controllers folder /app/Http/Controllers/Frontend
+1. Create a new file in the Controllers folder /app/Http/Controllers/Admin
 2. For example PostsController.php
 3. Add the following template
 ```php
