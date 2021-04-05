@@ -325,11 +325,291 @@ class Post extends Model
 #### How to create a view
 1. Create a new file inside this folder /resources/views/admin/
 2. For example /resources/views/admin/posts/index.php
-3. Copy in the following template
-```html
-<h1>Users</h1>
+3. Copy in the following templates
 
-<p>This is the posts admin page</p>
+#### resources/views/backend/posts/index.php
+```php
+<a href="/admin/posts/create"><button>Create Post</button></a>
+<br /><br />
+
+<table border="1" style="border-collapse: collapse;" cellpadding="5">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Body</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(!empty($data['results'])) {
+            foreach($data['results'] as $result) {
+
+                echo '<tr>';
+
+                $attributes = $result->attributes();
+
+                foreach($attributes as $key => $value) {
+                    echo '<td>'.$value.'</td>';
+                }
+
+                ?>
+                <td>
+                    <a href="/admin/posts/<?php echo !empty($result->id) ? $result->id : null; ?>/edit"><button>Edit</button></a> |
+                    <a href="/admin/posts/<?php echo !empty($result->id) ? $result->id : null; ?>/delete"><button>Delete</button></a>
+                </td>
+                <?php
+
+                echo '</tr>';
+            }
+        }
+    ?>
+    </tbody>
+</table>
+```
+#### resources/views/backend/posts/create.php
+
+```php
+<form method="post" action="/admin/posts/create">
+
+    <div class="form">
+
+        <div class="form-header">Create Post</div>
+
+        <div class="form-container">
+
+            <!-- title -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="title">Title</label>
+                </div>
+                <div class="form-cell">
+                    <input type="text" name="title" placeholder="Title">
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- subject -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="form-cell">
+                    <input type="text" name="subject" placeholder="Subject">
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- description -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="description">Description</label>
+                </div>
+                <div class="form-cell">
+                    <textarea name="description" placeholder="Description"></textarea>
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- password -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="body">Body</label>
+                </div>
+                <div class="form-cell">
+                    <textarea name="body" placeholder="Body"></textarea>
+                </div>
+                <div class="form-clear"></div>
+            </div>
+            
+            <!-- submit -->
+            <div class="form-row">
+                <div class="form-cell">
+                    &nbsp;
+                </div>
+                <div class="form-cell form-cell-right">
+                    <input type="submit" value="Create Post">
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+        </div>
+
+    </div>
+</form>
+```
+
+#### resources/views/backend/posts/edit.php
+
+```php
+<form method="POST" action="/admin/posts/<?php echo !empty($data['result']['id']) ? $data['result']['id'] : null; ?>/update">
+    <input type="hidden" name="_method" value="PUT">
+
+    <div class="form">
+
+        <div class="form-header">Update Post</div>
+
+        <div class="form-container">
+
+            <!-- ID -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="id">ID</label>
+                </div>
+                <div class="form-cell">
+                    <input type="text" name="id" placeholder="ID" value="<?php echo !empty($data['result']['id']) ? $data['result']['id'] : null; ?>" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- title -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="title">Title</label>
+                </div>
+                <div class="form-cell">
+                    <input type="text" name="title" placeholder="Title" value="<?php echo !empty($data['result']['id']) ? $data['result']['id'] : null; ?>">
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- subject -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="form-cell">
+                    <input type="text" name="subject" placeholder="Subject" value="<?php echo !empty($data['result']['subject']) ? $data['result']['subject'] : null; ?>">
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- description -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="description">Description</label>
+                </div>
+                <div class="form-cell">
+                    <textarea name="description" placeholder="Description"><?php echo !empty($data['result']['description']) ? $data['result']['description'] : null; ?></textarea>
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- body -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="body">Body</label>
+                </div>
+                <div class="form-cell">
+                    <textarea name="body" placeholder="Body"><?php echo !empty($data['result']['body']) ? $data['result']['body'] : null; ?></textarea>
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- submit -->
+            <div class="form-row">
+                <div class="form-cell">
+                    &nbsp;
+                </div>
+                <div class="form-cell form-cell-right">
+                    <input type="submit" value="Update User">
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+        </div>
+
+    </div>
+</form>
+```
+
+#### resources/views/backend/posts/delete.php
+
+```php
+<form method="POST" action="/admin/posts/<?php echo !empty($data['result']['id']) ? $data['result']['id'] : null; ?>/destroy">
+    <input type="hidden" name="_method" value="DELETE">
+
+    <div class="form">
+
+        <div class="form-header">Delete Post</div>
+
+        <div class="form-container">
+
+            <!-- ID -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="id">ID</label>
+                </div>
+                <div class="form-cell">
+                    <input type="text" name="id" placeholder="ID" value="<?php echo !empty($data['result']['id']) ? $data['result']['id'] : null; ?>" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- title -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="title">Title</label>
+                </div>
+                <div class="form-cell">
+                    <input type="text" name="title" placeholder="Title" value="<?php echo !empty($data['result']['id']) ? $data['result']['id'] : null; ?>" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- subject -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="form-cell">
+                    <input type="text" name="subject" placeholder="Subject" value="<?php echo !empty($data['result']['subject']) ? $data['result']['subject'] : null; ?>"  readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- description -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="description">Description</label>
+                </div>
+                <div class="form-cell">
+                    <textarea name="description" placeholder="Description" readonly="readonly" disabled="disabled"><?php echo !empty($data['result']['description']) ? $data['result']['description'] : null; ?></textarea>
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- body -->
+            <div class="form-row">
+                <div class="form-cell">
+                    <label for="body">Body</label>
+                </div>
+                <div class="form-cell">
+                    <textarea name="body" placeholder="Body" readonly="readonly" disabled="disabled"><?php echo !empty($data['result']['body']) ? $data['result']['body'] : null; ?></textarea>
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+            <!-- submit -->
+            <div class="form-row">
+                <div class="form-cell">
+                    &nbsp;
+                </div>
+                <div class="form-cell form-cell-right">
+                    <input type="submit" value="Delete Post">
+                </div>
+                <div class="form-clear"></div>
+            </div>
+
+        </div>
+
+    </div>
+</form>
 ```
 
 ## 7. Layouts
