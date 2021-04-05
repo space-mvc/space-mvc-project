@@ -62,9 +62,9 @@
 2. Add a new entry to the array
 ```php
 [
-    'name' => 'frontend.users',
-    'uri' => '/users',
-    'controller' => \App\Http\Controllers\Frontend\UsersControllerController::class,
+    'name' => 'frontend.posts.index',
+    'uri' => '/posts',
+    'controller' => \App\Http\Controllers\Frontend\PostsControllerController::class,
     'action' => 'index',
 ],
 ```
