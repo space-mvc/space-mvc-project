@@ -1,9 +1,8 @@
 <?php
-declare(strict_types=1);
 
-use Phinx\Migration\AbstractMigration;
+use SpaceMvc\Framework\Library\Abstract\MigrationAbstract;
 
-final class V20210402141919 extends AbstractMigration
+final class V20210402141919 extends MigrationAbstract
 {
     /**
      * up
@@ -17,6 +16,7 @@ final class V20210402141919 extends AbstractMigration
             ->addColumn('password', 'string')
             ->addColumn('gender', 'string')
             ->addColumn('date_of_birth', 'string')
+            ->addTimestamps()
             ->create();
     }
 
