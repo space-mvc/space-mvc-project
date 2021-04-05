@@ -244,9 +244,9 @@ class PostsController extends BaseController
 Migrations are used to create new database tables
 
 1. Create a file inside the folder /database/migrations
-2. For example database/migrations/20210402141920.php  (Year-Month-Day Timestamp Format)
+2. For example database/migrations/20210402141920.php (Year-Month-Day Timestamp Format)
 3. Copy the template below into the file
-4. Update the table creation settings as desired
+4. Update the table columns as desired
 5. Run this command to create all database table - ```vendor/bin/phinx migrate```
 6. Run this command to insert seed data - ```vendor/bin/phinx seed:run```
 7. Run this command to remove tables - ```vendor/bin/phinx rollback```
